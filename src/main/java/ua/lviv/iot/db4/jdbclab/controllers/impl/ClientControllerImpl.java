@@ -4,12 +4,12 @@ import ua.lviv.iot.db4.jdbclab.services.ClientService;
 import ua.lviv.iot.db4.jdbclab.models.Client;
 import ua.lviv.iot.db4.jdbclab.controllers.ClientController;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Controller
 public class ClientControllerImpl implements ClientController {
     @Autowired
     private ClientService clientService;

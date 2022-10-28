@@ -4,12 +4,12 @@ import ua.lviv.iot.db4.jdbclab.controllers.PhoneController;
 import ua.lviv.iot.db4.jdbclab.models.Phone;
 import ua.lviv.iot.db4.jdbclab.services.PhoneService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Controller
 public class PhoneControllerImpl implements PhoneController {
     @Autowired
     private PhoneService phoneService;

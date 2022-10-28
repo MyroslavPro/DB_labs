@@ -4,12 +4,12 @@ import ua.lviv.iot.db4.jdbclab.controllers.LocationController;
 import ua.lviv.iot.db4.jdbclab.models.Location;
 import ua.lviv.iot.db4.jdbclab.services.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Controller
 public class LocationControllerImpl implements LocationController {
     @Autowired
     private LocationService locationService;

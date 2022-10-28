@@ -45,7 +45,7 @@ public class TourServiceImpl implements TourService {
     }
     
     @Override 
-    public Optional<Tour> findTheCheapestTour() {
-        return tourDao.findTheCheapestTour();
+    public List<Tour> getAllAvailableTours(Double price) {
+        return tourDao.getAllAvailableTours(price);
     }
 }

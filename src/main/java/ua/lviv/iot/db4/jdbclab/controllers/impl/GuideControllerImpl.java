@@ -4,12 +4,12 @@ import ua.lviv.iot.db4.jdbclab.controllers.GuideController;
 import ua.lviv.iot.db4.jdbclab.models.Guide;
 import ua.lviv.iot.db4.jdbclab.services.GuideService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Controller
 public class GuideControllerImpl implements GuideController{
     @Autowired
     private GuideService guideService;

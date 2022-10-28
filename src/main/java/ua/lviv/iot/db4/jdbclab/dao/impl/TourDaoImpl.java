@@ -19,7 +19,7 @@ public class TourDaoImpl implements TourDao {
     private static final String DELETE = "DELETE FROM tour WHERE id=?";
     private static final String FIND_BY_ID = "SELECT * FROM tour WHERE id=?";
     private static final String FIND_BY_TOUR_NAME = "SELECT * FROM tour WHERE name=?";
-    private static final String FIND_THE_CHEAPEST_TOUR = "SELECT * FROM tour WHERE price=min(price)";
+    private static final String FIND_THE_AVAILABLE_TOURS = "SELECT * FROM tour WHERE price<?";
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -68,16 +68,18 @@ public class TourDaoImpl implements TourDao {
         return tour;
     }
     
+    // Return List of Available TOURS
     @Override
-    public Optional<Tour> findTheCheapestTour() {
-        Optional<Tour> tour;
-        try {
-        	tour = Optional.ofNullable(jdbcTemplate.queryForObject(FIND_THE_CHEAPEST_TOUR,
-                    BeanPropertyRowMapper.newInstance(Tour.class)));
-        } catch (EmptyResultDataAccessException e) {
-        	tour = Optional.empty();
-        }
-        return tour;
+    public List<Tour> getAllAvailableTours(Double price) {
+    	return jdbcTemplate.query(FIND_THE_AVAILABLE_TOURS, BeanPropertyRowMapper.newInstance(Tour.class),price);
+//        Optional<Tour> tour;
+//        try {
+//        	tour = Optional.ofNullable(jdbcTemplate.queryForObject(FIND_THE_AVAILABLE_TOURS,
+//                    BeanPropertyRowMapper.newInstance(Tour.class)));
+//        } catch (EmptyResultDataAccessException e) {
+//        	tour = Optional.empty();
+//        }
+//        return tour;
     }
 
 }

@@ -4,12 +4,12 @@ import ua.lviv.iot.db4.jdbclab.controllers.LanguageController;
 import ua.lviv.iot.db4.jdbclab.models.Language;
 import ua.lviv.iot.db4.jdbclab.services.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Controller
 public class LanguageControllerImpl implements LanguageController{
     @Autowired
     private LanguageService languageService;

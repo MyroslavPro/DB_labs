@@ -4,12 +4,12 @@ import ua.lviv.iot.db4.jdbclab.controllers.TourController;
 import ua.lviv.iot.db4.jdbclab.models.Tour;
 import ua.lviv.iot.db4.jdbclab.services.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
+@Controller
 public class TourControllerImpl implements TourController {
     @Autowired
     private TourService tourService;
@@ -45,7 +45,7 @@ public class TourControllerImpl implements TourController {
     }
     
     @Override 
-    public Optional<Tour> findTheCheapestTour() {
-        return tourService.findTheCheapestTour();
+    public List<Tour> getAllAvailableTours(Double price){
+        return tourService.getAllAvailableTours(price);
     }
 }
